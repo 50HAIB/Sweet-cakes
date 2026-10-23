@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6f2846">
+  <title>Sweet Cakes | Made for your moments</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Sweet Cakes home"><span class="brand-mark">✿</span><span>sweet cakes<small>MADE FOR YOUR MOMENTS</small></span></a>
+    <nav class="desktop-nav"><a href="#cakes">Our Cakes</a><a href="#how">How to order</a><a href="#contact">Contact</a></nav>
+    <div class="header-actions">
+      <button id="accountBtn" class="text-btn">Log in</button>
+      <button id="cartBtn" class="cart-btn" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">BAKED WITH A LITTLE EXTRA LOVE</span>
+        <h1>A little slice of <em>happiness.</em></h1>
+        <p>Thoughtfully made cakes for birthdays, celebrations, and the sweetest everyday moments.</p>
+        <a class="primary-btn" href="#cakes">Explore our cakes <span>↗</span></a>
+        <div class="hero-note"><span>★★★★★</span> Freshly made to order</div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=85" alt="Decorated celebration cake">
+        <div class="image-sticker">Baked fresh<br><b>just for you</b> ♡</div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Our promises">
+      <div><span>✿</span><b>Freshly baked</b><small>Made for your order</small></div>
+      <div><span>♡</span><b>Made personal</b><small>Your cake, your way</small></div>
+      <div><span>⌂</span><b>Easy ordering</b><small>Simple and convenient</small></div>
+    </section>
+
+    <section id="cakes" class="cakes-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE GOOD STUFF</span><h2>Find your <em>favourite.</em></h2></div>
+        <p>Choose a cake, make it yours, and we’ll take care of the sweet details.</p>
+      </div>
+      <div class="filter-row" id="filters">
+        <button class="filter active" data-filter="All">All cakes</button>
+        <button class="filter" data-filter="Chocolate">Chocolate</button>
+        <button class="filter" data-filter="Fruit">Fruit</button>
+        <button class="filter" data-filter="Classic">Classic</button>
+      </div>
+      <div id="cakeGrid" class="cake-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="how" class="how-section">
+      <div><span class="eyebrow">SWEET AND SIMPLE</span><h2>Your celebration,<br><em>your way.</em></h2></div>
+      <div class="steps">
+        <div><span>01</span><b>Choose your cake</b><p>Pick your favourite flavour and size.</p></div>
+        <div><span>02</span><b>Make it personal</b><p>Add toppings, a message, and any special instructions.</p></div>
+        <div><span>03</span><b>Place your order</b><p>We’ll confirm your order and keep you updated by email.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-strip">
+      <div><span class="eyebrow">HAVE SOMETHING SPECIAL IN MIND?</span><h2>Let’s make it <em>sweet.</em></h2></div>
+      <p>Use the custom message and instructions when ordering, and tell us exactly how you imagine your cake.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">✿</span><span>sweet cakes<small>MADE FOR YOUR MOMENTS</small></span></a><span>Fresh cakes. Happy moments. ♡</span></footer>
+
+  <div id="modalLayer" class="modal-layer hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="modalContent"></div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

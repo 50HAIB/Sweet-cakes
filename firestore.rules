@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /orders/{orderId} {
+      // Customers can read only their own orders.
+      allow read: if request.auth != null &&
+        resource.data.customerUid == request.auth.uid;
+
+      // A customer may create an order only for their own signed-in account.
+      // Backend functions send notifications when the order is created.
+      allow create: if request.auth != null &&
+        request.resource.data.customerUid == request.auth.uid &&
+        request.resource.data.customerEmail == request.auth.token.email &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.total is number &&
+        request.resource.data.total > 0 &&
+        request.resource.data.items is list &&
+        request.resource.data.items.size() > 0 &&
+        request.resource.data.customerName is string &&
+        request.resource.data.customerPhone is string &&
+        request.resource.data.deliveryAddress is string;
+
+      // No client-side status edits: status is managed by trusted staff in
+      // Firebase Console or a future secured staff tool.
+      allow update, delete: if false;
+    }
+  }
+}
